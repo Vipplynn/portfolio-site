@@ -16,6 +16,27 @@ export interface Project {
   
   export const projects: Project[] = [
     {
+      title: "Portfolio Website",
+      description:
+        "A one-page interactive portfolio to showcase my projects, experience, and background as an aspiring software developer. Designed with scalability and storytelling in mind, and built entirely with modern web tools.",
+      features: [
+        "Fully responsive one-page layout",
+        "Modular and future-proof project and experience system",
+        "Smooth navigation and interactive component structure",
+      ],
+      contribution:
+        "Designed and built the site from scratch using React, Vite, and TailwindCSS v4. Integrated a scalable data model for projects and experience. Deployed using Vercel with GitHub CI integration.",
+      tech: [
+        "React", "TypeScript", "Tailwind CSS v4", "Vite", "Vercel", "GitHub"
+      ],
+      links: {
+        repo: "https://github.com/Vipplynn/portfolio-site",
+        website: "https://christian-cho-site.vercel.app/",
+      },
+      date:"May. 2, 2025 — Ongoing",
+      featured: false
+    },
+    {
       title: "CookCompass",
       description:
         "A recipe discovery platform where users enter ingredients they have, and receive recipes they can make — with translation, filtering, and accessibility features.",
@@ -81,7 +102,7 @@ export interface Project {
         website: "https://jakeyee.com/landing",
       },
       date:"Oct. 21, 2023 — Oct. 23, 2023",
-      featured: true
+      featured: false
     },
   ];
   

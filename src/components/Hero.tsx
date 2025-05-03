@@ -6,7 +6,7 @@ function Hero() {
           I’m a Computer Science student at SFU building playful and purposeful digital experiences.
         </p>
         <div className="mt-6">
-          <a href="#projects" className="px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700">
+          <a href="#featured-projects" className="px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700">
             View My Projects
           </a>
         </div>

@@ -4,6 +4,8 @@ import Projects from './components/Projects'
 import About from './components/About'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import FeaturedProjects from "./components/FeaturedProjects";
+
 
 function App() {
   return (
@@ -11,6 +13,7 @@ function App() {
       <Navbar />
       <main>
         <Hero />
+        <FeaturedProjects />
         <Projects />
         <About />
         <Contact />
