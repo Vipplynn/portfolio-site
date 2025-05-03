@@ -12,14 +12,20 @@ function Navbar() {
 
         {/* Navigation Links */}
         <div className="space-x-4 text-sm">
-          <a href="#about" className="hover:underline">
-            About
+          <a href="#about" className="relative inline-block text-gray-700 hover:text-black transition-colors duration-300">
+            <span className="after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">
+              About
+            </span>
           </a>
-          <a href="#featured-projects" className="hover:underline">
-            Projects
+          <a href="#featured-projects" className="relative inline-block text-gray-700 hover:text-black transition-colors duration-300">
+            <span className="after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">
+                Projects
+            </span>
           </a>
-          <a href="#contact" className="hover:underline">
-            Contact
+          <a href="#contact" className="relative inline-block text-gray-700 hover:text-black transition-colors duration-300">
+            <span className="after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">
+              Contact
+            </span>
           </a>
         </div>
       </div>
