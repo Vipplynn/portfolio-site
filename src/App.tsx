@@ -6,7 +6,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import FeaturedProjects from "./components/FeaturedProjects";
 import Experience from "./components/Experience";
-
+import SkillsDie from "./components/SkillsDie";
 
 function App() {
   return (
@@ -15,6 +15,7 @@ function App() {
       <main>
         <Hero />
         <About />
+        <SkillsDie />
         <FeaturedProjects />
         <Projects />
         <Experience />
