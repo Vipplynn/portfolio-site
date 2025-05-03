@@ -16,9 +16,9 @@ function FeaturedProjects() {
               tiltMaxAngleY={6}
               scale={1.02}
               transitionSpeed={1000}
-              className="rounded"
+              className="backface-hidden transform-style-3d transform translate-z-0 hover:shadow-[0_0_25px_rgba(59,130,246,0.6)] hover:-translate-y-1 rounded-xl"
             >
-            <div key={idx} className="bg-gray-100 p-6 rounded shadow">
+            <div key={idx} className="bg-gray-100 p-6 rounded shadow h-full min-h-[350px] flex flex-col justify-between">
               <div className="flex justify-between items-center">
                 <h3 className="text-xl font-semibold">{project.title}</h3>
                 <p className="text-sm text-gray-400 ml-4 whitespace-nowrap">{project.date}</p>

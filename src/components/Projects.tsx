@@ -15,7 +15,7 @@ function Projects() {
               glareEnable={false}
               scale={1.02}
               transitionSpeed={1000}
-              className="rounded">
+              className="backface-hidden transform-style-3d transform translate-z-0">
             <div key={idx} className="bg-white p-6 rounded shadow">
               <div className="flex justify-between items-center">
                 <h3 className="text-xl font-semibold">{project.title}</h3>
