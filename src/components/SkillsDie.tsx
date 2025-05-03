@@ -2,6 +2,7 @@ import { Suspense, useRef, useMemo, useState, FC } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import * as THREE from "three";
 import { OrbitControls } from "@react-three/drei";
+import { motion } from "framer-motion";
 
 interface Skill {
   name: string;
@@ -161,7 +162,14 @@ export default function SkillsDie() {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
-    <section className="py-16 px-4 sm:px-8 bg-white text-gray-900">
+    <motion.section
+      id="skills"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="py-16 px-4 sm:px-8 bg-white text-gray-900"
+      viewport={{ once: true, amount: 0.3 }}
+      >
       <div className="flex flex-col items-center mb-6">
         <h2 className="text-3xl font-bold mb-2">Technical Skills</h2>
         <p className="text-sm sm:text-base italic text-gray-600">Click and drag to rotate</p>
@@ -217,6 +225,6 @@ export default function SkillsDie() {
           </div>
         )}
       </div>
-    </section>
+    </motion.section>
   );
 }

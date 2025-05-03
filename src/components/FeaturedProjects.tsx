@@ -1,11 +1,19 @@
 import { projects, Project } from "../data/projects";
 import Tilt from "react-parallax-tilt";
+import { motion } from "framer-motion";
 
 function FeaturedProjects() {
   const featured = projects.filter((project: Project) => project.featured);
 
   return (
-    <section id="featured-projects" className="py-20 px-4 bg-white">
+    <motion.section
+      id="featured-projects"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="py-20 px-4 bg-white"
+    >
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl font-bold mb-10">Featured Projects — Projects I am especially proud to showcase!</h2>
         <div className="grid md:grid-cols-2 gap-6">
@@ -73,7 +81,7 @@ function FeaturedProjects() {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

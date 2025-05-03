@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
+import { motion } from "framer-motion";
 
 function Contact() {
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
@@ -50,7 +51,14 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 px-4 bg-white-100">
+    <motion.section
+      id="contact"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="py-20 px-4 bg-white-100"
+    >
       <div className="max-w-xl mx-auto text-center">
         <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
         <p className="mb-6 text-gray-600">
@@ -144,7 +152,7 @@ function Contact() {
           </a>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

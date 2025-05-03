@@ -1,9 +1,17 @@
 import { projects, Project } from "../data/projects";
 import Tilt from "react-parallax-tilt";
+import { motion } from "framer-motion";
 
 function Projects() {
   return (
-    <section id="projects" className="py-20 px-4 bg-gray-100">
+    <motion.section
+      id="projects"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="py-20 px-4 bg-gray-100"
+    >
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl font-bold mb-10">Projects</h2>
         <div className="grid md:grid-cols-2 gap-6">
@@ -75,7 +83,7 @@ function Projects() {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 
