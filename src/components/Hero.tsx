@@ -17,7 +17,7 @@ function Hero() {
         {/* Right: Text Content */}
         <div className="w-full md:w-1/2 text-center md:text-left flex flex-col justify-between h-full -mt-2">
           <div>
-            <h1 className="text-5xl lg:text-6xl font-bold mb-6">Christian Cho</h1>
+          <h1 className="text-5xl lg:text-6xl font-bold mb-6 relative top-4 md:top-0">Christian Cho</h1>
             <h2 className="text-2xl lg:text-3xl text-gray-600 mb-8">Computer Science Student @ SFU</h2>
             <p className="text-gray-700 mb-8 max-w-prose md:max-w-md mx-auto md:mx-0 text-justify text-lg leading-relaxed">
               I’m a second-year Computer Science student at Simon Fraser University, building a strong

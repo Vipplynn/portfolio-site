@@ -1,4 +1,3 @@
-// src/components/SkillsDie.tsx
 import { Suspense, useRef, useMemo, useState, FC } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import * as THREE from "three";
@@ -44,7 +43,6 @@ const FaceSticker: FC<FaceStickerProps> = ({
 }) => {
   const ref = useRef<THREE.Mesh>(null!);
 
-  // Precompute quaternion to rotate +Z into the face normal
   const quat = useMemo(() => {
     return new THREE.Quaternion().setFromUnitVectors(
       new THREE.Vector3(0, 0, 1),
@@ -78,17 +76,10 @@ const FaceSticker: FC<FaceStickerProps> = ({
   );
 };
 
-interface DodecahedronWithStickersProps {
-  setHovered: (i: number | null) => void;
-}
-
-const DodecahedronWithStickers: FC<DodecahedronWithStickersProps> = ({ setHovered }) => {
+const DodecahedronWithStickers: FC<{ setHovered: (i: number | null) => void }> = ({ setHovered }) => {
   const groupRef = useRef<THREE.Group>(null!);
-
-  // 1) Load all SVGs
   const raw = useLoader(THREE.TextureLoader, skills.map(s => s.icon));
 
-  // 2) Rasterize each into a CanvasTexture
   const textures = useMemo<CanvasTex[]>(() => {
     return raw.map(t => {
       const img = t.image as HTMLImageElement;
@@ -103,13 +94,11 @@ const DodecahedronWithStickers: FC<DodecahedronWithStickersProps> = ({ setHovere
     });
   }, [raw]);
 
-  // 3) Spin the whole group
   useFrame(() => {
     groupRef.current.rotation.y += 0.003;
     groupRef.current.rotation.x += 0.001;
   });
 
-  // 4) Compute true face centers & normals using non‐indexed geometry
   const faceData = useMemo(() => {
     const geo = new THREE.DodecahedronGeometry(2);
     const non = geo.toNonIndexed();
@@ -124,14 +113,11 @@ const DodecahedronWithStickers: FC<DodecahedronWithStickersProps> = ({ setHovere
       const vC = new THREE.Vector3().fromBufferAttribute(posAttr, 3*t + 2);
 
       const center = vA.clone().add(vB).add(vC).divideScalar(3);
-      const normal = new THREE.Triangle(vA, vB, vC)
-        .getNormal(new THREE.Vector3())
-        .normalize();
+      const normal = new THREE.Triangle(vA, vB, vC).getNormal(new THREE.Vector3()).normalize();
 
       tris.push({ center, normal });
     }
 
-    // Group triangles by nearly-equal normals → 12 faces
     const groups: { normal: THREE.Vector3; centers: THREE.Vector3[] }[] = [];
     tris.forEach(({ center, normal }) => {
       const g = groups.find(g => g.normal.dot(normal) > 0.999);
@@ -139,11 +125,8 @@ const DodecahedronWithStickers: FC<DodecahedronWithStickersProps> = ({ setHovere
       else groups.push({ normal: normal.clone(), centers: [center] });
     });
 
-    // Average each group and offset slightly outward
     return groups.slice(0, skills.length).map(g => {
-      const avg = g.centers
-        .reduce((sum, v) => sum.add(v), new THREE.Vector3())
-        .divideScalar(g.centers.length);
+      const avg = g.centers.reduce((sum, v) => sum.add(v), new THREE.Vector3()).divideScalar(g.centers.length);
       const n = g.normal.clone();
       if (n.dot(avg) < 0) n.negate();
       return {
@@ -157,12 +140,7 @@ const DodecahedronWithStickers: FC<DodecahedronWithStickersProps> = ({ setHovere
     <group ref={groupRef}>
       <mesh>
         <dodecahedronGeometry args={[2]} />
-        <meshPhysicalMaterial   
-          color="#ffffff"   
-          metalness={0.15}
-          clearcoat={0.1}
-          roughness={0.1}
-       />
+        <meshPhysicalMaterial color="#ffffff" metalness={0.15} clearcoat={0.1} roughness={0.1} />
       </mesh>
 
       {faceData.map((d, i) => (
@@ -183,77 +161,62 @@ export default function SkillsDie() {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
-    <div
-      className="relative w-full h-[500px]"
-      style={{ cursor: hovered !== null ? "pointer" : "default" }}
-    >
-      <h2 className="absolute top-4 left-1/2 transform -translate-x-1/2 text-3xl font-bold pointer-events-none z-10">
-        Technical Skills
-      </h2>
-      <div
-        style={{
-          position: "absolute",
-          top: "56px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          color: "#555",
-          fontSize: "1.1rem",
-          fontStyle: "italic",
-          pointerEvents: "none",
-          zIndex: 1,
-        }}
-      >
-        Click and drag to rotate
+    <section className="py-16 px-4 sm:px-8 bg-white text-gray-900">
+      <div className="flex flex-col items-center mb-6">
+        <h2 className="text-3xl font-bold mb-2">Technical Skills</h2>
+        <p className="text-sm sm:text-base italic text-gray-600">Click and drag to rotate</p>
       </div>
 
-      <Canvas camera={{ position: [0, 0, 6], fov: 60 }}>
-        <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.5} />
-        <ambientLight intensity={3.2} />
-        <directionalLight position={[2, 2, 2]} intensity={2.0}/>
-        <Suspense fallback={null}>
-          <DodecahedronWithStickers setHovered={setHovered} />
-        </Suspense>
-      </Canvas>
+      <div className="relative w-full h-[500px]" style={{ cursor: hovered !== null ? "pointer" : "default" }}>
+        <Canvas camera={{ position: [0, 0, 6], fov: 60 }}>
+          <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.5} />
+          <ambientLight intensity={3.2} />
+          <directionalLight position={[2, 2, 2]} intensity={2.0} />
+          <Suspense fallback={null}>
+            <DodecahedronWithStickers setHovered={setHovered} />
+          </Suspense>
+        </Canvas>
 
-      {hovered !== null && (
-        <div
-          style={{
-            position: "absolute",
-            bottom: "24px",
-            left: "50%",
-            transform: "translateX(-50%)",
-            background: "white",
-            color: "#111",
-            padding: "12px 20px",
-            borderRadius: "12px",
-            boxShadow: "0 4px 16px rgba(0,0,0,0.2)",
-            textAlign: "center",
-            maxWidth: "280px",
-            zIndex: 1,
-          }}
-        >
-          <div style={{ fontSize: "1.4rem", fontWeight: 600, marginBottom: "8px" }}>
-            {skills[hovered].name}
-          </div>
-          <a
-            href={skills[hovered].url}
-            target="_blank"
-            rel="noopener noreferrer"
+        {hovered !== null && (
+          <div
             style={{
-              display: "inline-block",
-              padding: "6px 12px",
-              fontSize: "1rem",
-              color: "#555",
-              fontStyle: "italic",
-              borderRadius: "6px",
-              textDecoration: "none",
-              letterSpacing: "0.03em",
+              position: "absolute",
+              bottom: "24px",
+              left: "50%",
+              transform: "translateX(-50%)",
+              background: "white",
+              color: "#111",
+              padding: "12px 20px",
+              borderRadius: "12px",
+              boxShadow: "0 4px 16px rgba(0,0,0,0.2)",
+              textAlign: "center",
+              maxWidth: "280px",
+              zIndex: 1,
             }}
           >
-            Click to visit site
-          </a>
-        </div>
-      )}
-    </div>
+            <div style={{ fontSize: "1.4rem", fontWeight: 600, marginBottom: "8px" }}>
+              {skills[hovered].name}
+            </div>
+            <a
+              href={skills[hovered].url}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-block",
+                padding: "6px 12px",
+                fontSize: "1rem",
+                color: "#555",
+                fontStyle: "italic",
+                borderRadius: "6px",
+                textDecoration: "none",
+                letterSpacing: "0.03em",
+              }}
+            >
+              Click to visit site
+            </a>
+          </div>
+        )}
+      </div>
+    </section>
   );
 }
