@@ -1,4 +1,5 @@
 import { experience, Experience as ExperienceType } from "../data/experience";
+import Tilt from "react-parallax-tilt";
 
 function Experience() {
   return (
@@ -7,6 +8,14 @@ function Experience() {
         <h2 className="text-3xl font-bold mb-10">Experience</h2>
         <div className="space-y-6">
           {experience.map((item: ExperienceType, idx: number) => (
+            <Tilt
+              key={idx}
+              tiltMaxAngleX={6}
+              tiltMaxAngleY={6}
+              scale={1.02}
+              transitionSpeed={1000}
+              className="rounded"
+            >
             <div key={idx} className="bg-white p-6 rounded shadow">
               <div className="flex justify-between items-center">
                 <h3 className="text-lg font-semibold">{item.title}</h3>
@@ -27,6 +36,7 @@ function Experience() {
                 </div>
               )}
             </div>
+            </Tilt>
           ))}
         </div>
       </div>

@@ -1,4 +1,5 @@
 import { projects, Project } from "../data/projects";
+import Tilt from "react-parallax-tilt";
 
 function FeaturedProjects() {
   const featured = projects.filter((project: Project) => project.featured);
@@ -9,6 +10,14 @@ function FeaturedProjects() {
         <h2 className="text-3xl font-bold mb-10">Featured Projects — Projects I am especially proud to showcase!</h2>
         <div className="grid md:grid-cols-2 gap-6">
           {featured.map((project, idx) => (
+            <Tilt
+              key={idx}
+              tiltMaxAngleX={6}
+              tiltMaxAngleY={6}
+              scale={1.02}
+              transitionSpeed={1000}
+              className="rounded"
+            >
             <div key={idx} className="bg-gray-100 p-6 rounded shadow">
               <div className="flex justify-between items-center">
                 <h3 className="text-xl font-semibold">{project.title}</h3>
@@ -60,6 +69,7 @@ function FeaturedProjects() {
                 )}
               </div>
             </div>
+            </Tilt>
           ))}
         </div>
       </div>

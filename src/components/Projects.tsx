@@ -1,4 +1,5 @@
 import { projects, Project } from "../data/projects";
+import Tilt from "react-parallax-tilt";
 
 function Projects() {
   return (
@@ -7,6 +8,14 @@ function Projects() {
         <h2 className="text-3xl font-bold mb-10">Projects</h2>
         <div className="grid md:grid-cols-2 gap-6">
           {projects.map((project: Project, idx: number) => (
+            <Tilt
+              key={idx}
+              tiltMaxAngleX={6}
+              tiltMaxAngleY={6}
+              glareEnable={false}
+              scale={1.02}
+              transitionSpeed={1000}
+              className="rounded">
             <div key={idx} className="bg-white p-6 rounded shadow">
               <div className="flex justify-between items-center">
                 <h3 className="text-xl font-semibold">{project.title}</h3>
@@ -62,6 +71,7 @@ function Projects() {
                 )}
               </div>
             </div>
+            </Tilt>
           ))}
         </div>
       </div>
