@@ -5,6 +5,7 @@ import About from './components/About'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import FeaturedProjects from "./components/FeaturedProjects";
+import Experience from "./components/Experience";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Hero />
         <FeaturedProjects />
         <Projects />
+        <Experience />
         <About />
         <Contact />
       </main>
