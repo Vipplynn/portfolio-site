@@ -1,0 +1,88 @@
+export interface Project {
+    title: string;
+    description: string;
+    features: string[];
+    contribution: string;
+    tech: string[];
+    links: {
+      repo?: string;
+      website?: string;
+      video?: string;
+    };
+    date?: string;
+    featured?: boolean;
+  }
+  
+  
+  export const projects: Project[] = [
+    {
+      title: "CookCompass",
+      description:
+        "A recipe discovery platform where users enter ingredients they have, and receive recipes they can make — with translation, filtering, and accessibility features.",
+      features: [
+        "Multilingual ingredient input and recipe translation",
+        "Step-by-step recipe simplification",
+        "Text-to-speech cooking instructions",
+        "Ingredient-based filtering (e.g. vegetarian, no gluten)"
+      ],
+      contribution:
+        "Built the ingredient input system, integrated the Spoonacular API, and implemented recipe simplification and text-to-speech features. Also contributed to frontend UI using React and CSS.",
+      tech: [
+        "React",
+        "TypeScript",
+        "Spoonacular API",
+        "Google Translate API",
+        "Google TTS",
+        "CSS",
+        "Jest",
+        "Netlify"
+      ],
+      links: {
+        website: "https://cookcompassapp.netlify.app/",
+        video: "https://www.youtube.com/watch?v=tfTF-Vxc0tM"
+      },
+      date:"Jan. 23, 2025 — Apr. 8, 2025",
+      featured: true
+    },
+    {
+      title:"Jake's Journey",
+      description:
+        "A mind-bending 3D puzzle game built for the Mountain Madness 2024 hackathon. Play as Jake and rotate perspectives to solve hidden puzzles and traverse a challenging mountain path.",
+      features:[
+        "Directional camera system relative to player orientation",
+        "Multi-perspective puzzle design",
+        "Custom sound effects, music, and level assets",
+        "Interactive puzzles with clues hidden via camera manipulation"
+      ],
+      contribution:
+        "Programmed the relative movement and camera system in Unity, and helped design key puzzle mechanics. Produced original sound design and music using FL Studio.",
+      tech:["Unity", "C#", "FL Studio"],
+      links: {
+        repo: "https://github.com/Masagoro1/PuzzleGame"
+      },
+      date:"Mar. 24, 2024 — Mar. 25, 2024",
+      featured: true
+    },
+    {
+      title:"Birge Adventure",
+      description:
+        "A fast-paced arcade-style game built for the Fall Hacks 2023 hackathon. Play as Birge, a leaf spirit free-falling through the sky. The longer you fall, the more points you earn — but you'll need to dodge obstacles and adapt with each rebirth.",
+      features:[
+        "Arcade-style gameplay with infinite free-fall scoring",
+        "Obstacle-dodging system with WASD and arrow key controls",
+        "Custom sound effects, music, and level assets",
+        "Online leaderboard integrated with a Cloudflare-hosted static backend"
+      ],
+      contribution:
+        "Composed the full game soundtrack and created all sound effects using FL Studio. Collaborated on gameplay mechanics and level design concepts.",
+      tech:["Unity", "C#", "FL Studio", "Discord API", "GitHub API", "Cloudflare Pages"],
+      links: {
+        repo: "https://github.com/Masagoro1/FallHacks23",
+        website: "https://jakeyee.com/landing",
+      },
+      date:"Oct. 21, 2023 — Oct. 23, 2023",
+      featured: true
+    },
+  ];
+  
+  
