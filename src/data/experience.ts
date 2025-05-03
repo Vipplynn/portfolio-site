@@ -40,7 +40,7 @@ export const experience: Experience[] = [
     tags: ["Hackathon", "Python", "Backend Development"]
   },
   {
-    title: "Winner – Fall Hacks Hackathon 2023",
+    title: "3rd Place – Fall Hacks Hackathon 2023",
     organization: "CSSS at SFU",
     date: "Oct. 2023",
     description:
