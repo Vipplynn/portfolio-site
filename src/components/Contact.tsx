@@ -122,18 +122,20 @@ function Contact() {
           ></textarea>
 
           {/* hCaptcha integration */}
-          <HCaptcha
-            sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
-            onVerify={handleCaptcha}
-            reCaptchaCompat={false}
-            ref={captchaRef}
-          />
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <HCaptcha
+              sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
+              onVerify={handleCaptcha}
+              reCaptchaCompat={false}
+              ref={captchaRef}
+            />
 
-          <StyledWrapper>
-            <button type="submit" className="button">
-              Send Message
-            </button>
-          </StyledWrapper>
+            <StyledWrapper>
+              <button type="submit" className="button">
+                Send Message
+              </button>
+            </StyledWrapper>
+          </div>
         </form>
       <div className="mt-10">
         <ContactSocialButtons />
