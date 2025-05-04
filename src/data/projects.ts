@@ -47,7 +47,7 @@ export interface Project {
         "Ingredient-based filtering (e.g. vegetarian, no gluten)"
       ],
       contribution:
-        "Built the ingredient input system, integrated the Spoonacular API, and implemented recipe simplification and text-to-speech features. Also contributed to frontend UI using React and CSS.",
+        "Developed core features including ingredient input with autocomplete, intelligent recipe search, and interactive recipe modals showing images, cook time, nutrition, and instructions. Designed and styled a clean, responsive UI with CSS, and enhanced usability through seamless keyboard and mouse interactions.",
       tech: [
         "React",
         "TypeScript",

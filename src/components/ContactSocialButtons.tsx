@@ -13,7 +13,7 @@ const ContactSocialButtons = () => {
         </li>
         <li className="icon email">
           <span className="tooltip">Email</span>
-          <a href="mailto:christianc0000@gmail.com">
+          <a href="mailto:christianc0000@gmail.com,cac40@sfu.ca">
             <FaEnvelope size="1.4em" />
           </a>
         </li>
