@@ -14,7 +14,7 @@ function Projects() {
     >
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl font-bold mb-10">Projects</h2>
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-x-6 gap-y-6 auto-rows-fr">
           {projects.map((project: Project, idx: number) => (
             <Tilt
               key={idx}
@@ -24,7 +24,7 @@ function Projects() {
               scale={1.02}
               transitionSpeed={1000}
               className="backface-hidden transform-style-3d transform translate-z-0">
-            <div key={idx} className="bg-white p-6 rounded shadow">
+            <div key={idx} className="bg-white p-6 rounded shadow h-full flex flex-col justify-between">
               <div className="flex justify-between items-center">
                 <h3 className="text-xl font-semibold">{project.title}</h3>
                 <p className="text-sm text-gray-400 ml-4 whitespace-nowrap">
