@@ -33,7 +33,7 @@ export interface Project {
         repo: "https://github.com/Vipplynn/portfolio-site",
         website: "https://christian-cho-site.vercel.app/",
       },
-      date:"May. 2, 2025 — Ongoing",
+      date:"May. 2025",
       featured: false
     },
     {
