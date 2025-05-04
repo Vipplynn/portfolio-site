@@ -51,29 +51,35 @@ function FeaturedProjects() {
                 {project.links.website && (
                   <a
                     href={project.links.website}
-                    className="text-blue-600 underline text-sm"
+                    className="relative inline-block text-sm text-blue-600 hover:text-black transition-colors duration-300"
                     target="_blank"
                   >
-                    Website
+                    <span className="after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">
+                      Website
+                    </span>
                   </a>
                 )}
                 {project.links.repo && (
                   <a
                     href={project.links.repo}
-                    className="text-blue-600 underline text-sm"
+                    className="relative inline-block text-sm text-blue-600 hover:text-black transition-colors duration-300"
                     target="_blank"
                   >
-                    Repository
+                    <span className="after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">
+                      Repository
+                    </span>
                   </a>
                 )}
                 {project.links.video && (
                   <a
-                    href={project.links.video}
-                    className="text-blue-600 underline text-sm"
-                    target="_blank"
-                  >
+                  href={project.links.video}
+                  className="relative inline-block text-sm text-blue-600 hover:text-black transition-colors duration-300"
+                  target="_blank"
+                >
+                  <span className="after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">
                     Demo Video
-                  </a>
+                  </span>
+                </a>
                 )}
               </div>
             </div>

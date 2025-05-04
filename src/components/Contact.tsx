@@ -1,6 +1,9 @@
 import { useRef, useState } from "react";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 import { motion } from "framer-motion";
+import React from 'react';
+import ContactSocialButtons from "./ContactSocialButtons";
+import StyledWrapper from "./StyledSubmitButton";
 
 function Contact() {
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
@@ -126,31 +129,16 @@ function Contact() {
             ref={captchaRef}
           />
 
-          <button
-            type="submit"
-            className="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700"
-          >
-            Send Message
-          </button>
+          <StyledWrapper>
+            <button type="submit" className="button">
+              Send Message
+            </button>
+          </StyledWrapper>
         </form>
+      <div className="mt-10">
+        <ContactSocialButtons />
+      </div>
 
-        <div className="mt-6 space-x-4 text-blue-600">
-          <a
-            href="https://github.com/Vipplynn"
-            target="_blank"
-            rel="noreferrer"
-          >
-            GitHub
-          </a>
-          <a href="mailto:christianc0000@gmail.com">Email</a>
-          <a
-            href="https://linkedin.com/in/chochristian"
-            target="_blank"
-            rel="noreferrer"
-          >
-            LinkedIn
-          </a>
-        </div>
       </div>
     </motion.section>
   );
