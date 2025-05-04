@@ -7,7 +7,7 @@ const ResumeButton = () => {
       <ul className="wrapper">
         <li className="icon resume">
           <span className="tooltip">Résumé</span>
-          <a href="/resume.pdf" download="Christian_Cho_Resume.pdf">
+          <a href="/christian-cho-resume.pdf" target="_blank" rel="noreferrer">
             <FaFileDownload size="1.4em" />
           </a>
         </li>
