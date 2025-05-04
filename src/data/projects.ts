@@ -50,7 +50,7 @@ export interface Project {
         "Developed core features including ingredient input with autocomplete, intelligent recipe search, and interactive recipe modals showing images, cook time, nutrition, and instructions. Designed and styled a clean, responsive UI with CSS, and enhanced usability through seamless keyboard and mouse interactions.",
       tech: [
         "React",
-        "TypeScript",
+        "JavaScript",
         "Spoonacular API",
         "Google Translate API",
         "Google TTS",
