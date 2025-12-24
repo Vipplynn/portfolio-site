@@ -15,13 +15,13 @@ function About() {
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold mb-6">About Me</h2>
           <p className="text-lg leading-relaxed mb-4 text-justify">
-            I'm a second-year Computer Science student at Simon Fraser University, passionate about building meaningful, user-centered applications. My academic foundation is paired with hands-on experience from hackathons and personal projects, where I’ve learned to thrive in both collaborative and self-driven environments.
+            I'm a third-year Computer Science student at Simon Fraser University, driven by a curiosity for how software interacts with the physical world. My academic foundation is strengthened by hands-on experience from hackathons and technical projects, where I’ve learned to thrive in collaborative environments and tackle complex engineering challenges.
           </p>
           <p className="text-lg leading-relaxed mb-4 text-justify">
-            I’ve been spending a lot of time learning modern web development tools like React and Vite. I'm especially interested in building things that are intuitive, responsive, and actually enjoyable to use. Every project I work on teaches me something new — whether it’s about code, design, or just how to solve problems better.
+            Recently, I have shifted my focus toward embedded systems and low-level programming. I am passionate about mastering C++, optimizing real-time performance, and building robust architectures from scratch—such as custom networking protocols and signal processing pipelines. I enjoy the challenge of working within hardware constraints to create reliable, efficient, and tangible solutions.
           </p>
           <p className="text-lg leading-relaxed text-justify">
-            Outside of tech, I’m someone who values balance. I spend my time playing volleyball, gaming with friends, and creating digital art. These hobbies help me stay creative, collaborative, and always curious.
+            Outside of engineering, I value balance and creativity. I spend my time playing volleyball, gaming with friends, and creating digital art. These hobbies keep me collaborative, adaptable, and constantly exploring new perspectives that I bring back to my technical work.
           </p>
         </div>
       </motion.section>

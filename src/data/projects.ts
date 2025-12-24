@@ -15,6 +15,25 @@ export interface Project {
   
   
   export const projects: Project[] = [
+      {
+      title:"Optical Wireless Communication System",
+      description:
+        "An air-gapped file transfer system that establishes a unidirectional optical data link between devices using only a display and a webcam. This project implements a full custom networking stack to modulate binary data into visual signals, enabling secure communication without WiFi, Bluetooth, or physical cables.",
+      features:[
+        "Designed and built a full-stack air-gapped file transfer system using a computer screen (PHY) and webcam receiver, implementing a custom networking protocol from scratch.",
+        "Engineered a reliable Data Link Layer using Stop-and-Wait ARQ, CRC-8 error detection, and custom packet framing to ensure 100% data integrity over a noisy optical medium.",
+        "Developed a high-performance C++ receiver using OpenCV for real-time signal processing, implementing a finite state machine to parse binary streams and handle synchronization.",
+        "Optimized transmission protocols by analyzing Nyquist sampling limits and implementing robust handshake mechanisms to handle blocking I/O constraints."
+      ],
+      contribution:
+        "Architected and implemented the complete full-stack solution. Developed the JavaScript-based visual transmitter to handle binary file chunking and modulation, and programmed the C++ Computer Vision receiver to handle real-time signal demodulation, error correction, and file reconstruction.",
+      tech:["C++", "OpenCV", "JavaScript", "Finite State Machines"],
+      links: {
+        repo: "https://github.com/Vipplynn/AirGapTransfer",
+      },
+      date:"Dec. 15, 2023 — Dec. 23, 2023",
+      featured: true
+    },
     {
       title: "Portfolio Website",
       description:
