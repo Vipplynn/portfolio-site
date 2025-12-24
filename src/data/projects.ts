@@ -31,7 +31,7 @@ export interface Project {
       links: {
         repo: "https://github.com/Vipplynn/AirGapTransfer",
       },
-      date:"Dec. 15, 2023 — Dec. 23, 2023",
+      date:"Dec. 15, 2025 — Dec. 23, 2025",
       featured: true
     },
     {
