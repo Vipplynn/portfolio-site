@@ -3,19 +3,21 @@ import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 
 function Projects() {
+  const nonFeatured = projects.filter((project: Project) => !project.featured);
+
   return (
     <motion.section
       id="projects"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       className="py-20 px-4 bg-gray-100"
     >
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-3xl font-bold mb-10">Projects</h2>
+        <h2 className="text-3xl font-bold mb-10">All Projects</h2>
         <div className="grid md:grid-cols-2 gap-x-6 gap-y-6 auto-rows-fr">
-          {projects.map((project: Project, idx: number) => (
+          {nonFeatured.map((project: Project, idx: number) => (
             <Tilt
               key={idx}
               tiltMaxAngleX={6}
