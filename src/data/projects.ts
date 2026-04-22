@@ -27,7 +27,7 @@ export const projects: Project[] = [
     contribution:
       "Defined the conventions and architecture of the suite, and implemented/maintained each tool based on practical usage in real C projects.",
     tech: ["C", "Single-header libraries", "Systems programming", "Tooling"],
-    links: {},
+    links: { repo: "https://github.com/congruentC" },
     date: "Jan. 2026 — Ongoing",
     featured: true,
   },
