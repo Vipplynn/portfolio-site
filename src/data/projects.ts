@@ -54,6 +54,7 @@ export const projects: Project[] = [
     links: {
       video:
         "https://github.com/user-attachments/assets/deb6fbdb-9614-4162-baf1-202b080cc464",
+      repo: "https://github.com/Vipplynn/ArtificialLife",
     },
     date: "Jan. 2026 — Ongoing",
     featured: true,
