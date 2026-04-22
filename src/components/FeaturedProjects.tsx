@@ -35,7 +35,7 @@ function FeaturedProjects() {
               <p className="mt-2 text-gray-700 text-sm">{project.description}</p>
 
               <h4 className="font-semibold mt-3 text-sm">Features:</h4>
-              <ul className="list-disc list-inside text-sm text-gray-600">
+              <ul className="list-disc list-outside pl-5 text-sm text-gray-600">
                 {project.features.map((feature, i) => (
                   <li key={i}>{feature}</li>
                 ))}
